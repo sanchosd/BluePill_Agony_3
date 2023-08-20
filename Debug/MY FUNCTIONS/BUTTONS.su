@@ -1,0 +1,5 @@
+../MY FUNCTIONS/BUTTONS.cpp:13:1:Buttons::Buttons(buttons_t*)	24	static
+../MY FUNCTIONS/BUTTONS.cpp:80:6:void Buttons::scan_buttons()	24	static
+../MY FUNCTIONS/BUTTONS.cpp:106:22:Buttons::btn_state_t Buttons::get_button_state(int)	16	static
+../MY FUNCTIONS/BUTTONS.cpp:118:6:void Buttons::set_button_state(int, Buttons::btn_state_t)	24	static
+../MY FUNCTIONS/BUTTONS.cpp:130:6:void Buttons::process_buttons()	24	static

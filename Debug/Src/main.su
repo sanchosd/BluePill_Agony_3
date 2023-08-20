@@ -1,0 +1,9 @@
+D:/YandexDisk/Projects/STM32/BluePill agony-3/Inc/CMSIS/CORE/core_cm3.h:1511:22:void __NVIC_EnableIRQ(IRQn_Type)	16	static
+D:/YandexDisk/Projects/STM32/BluePill agony-3/MY FUNCTIONS/!!!CONFIG.hpp:22:2:ADC_dump_struct::ADC_dump_struct()	16	static
+../Src/main.cpp:30:17:void SysTick_Handler()	8	static
+../Src/main.cpp:42:17:void ADC1_2_IRQHandler()	4	static
+../Src/main.cpp:47:17:void DMA1_Channel1_IRQHandler()	4	static
+../Src/main.cpp:70:17:void TIM2_IRQHandler()	4	static
+../Src/main.cpp:80:5:int main()	8	static
+../Src/main.cpp:141:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../Src/main.cpp:141:1:cpp)	8	static

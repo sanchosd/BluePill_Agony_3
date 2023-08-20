@@ -1,0 +1,8 @@
+c:\st\stm32cubeide_1.10.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7-m/nofp/bits/gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+../MY FUNCTIONS/INITIALIZATION.cpp:13:6:void init_sysClock()	4	static
+../MY FUNCTIONS/INITIALIZATION.cpp:37:6:void init_GPIO()	4	static
+../MY FUNCTIONS/INITIALIZATION.cpp:45:6:void init_SysTick()	4	static
+../MY FUNCTIONS/INITIALIZATION.cpp:54:6:void init_ADC()	24	static
+../MY FUNCTIONS/INITIALIZATION.cpp:179:6:void init_USART()	4	static
+../MY FUNCTIONS/INITIALIZATION.cpp:198:6:void init_DMA()	4	static
+../MY FUNCTIONS/INITIALIZATION.cpp:214:6:void init_TIM2(int)	32	static
