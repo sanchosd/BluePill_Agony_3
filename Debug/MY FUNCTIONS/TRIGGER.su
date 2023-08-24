@@ -1,5 +1,0 @@
-../MY FUNCTIONS/TRIGGER.cpp:11:2:Trigger::Trigger(int)	16	static
-../MY FUNCTIONS/TRIGGER.cpp:24:7:void Trigger::trigger_update()	16	static
-../MY FUNCTIONS/TRIGGER.cpp:37:7:void Trigger::trigger_set()	16	static
-../MY FUNCTIONS/TRIGGER.cpp:42:7:void Trigger::trigger_reset()	16	static
-../MY FUNCTIONS/TRIGGER.cpp:47:7:bool Trigger::trigger_get_state()	16	static

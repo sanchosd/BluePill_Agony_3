@@ -49,34 +49,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := BluePill agony-3
+BUILD_ARTIFACT_NAME := BluePill_Agony_3
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-BluePill\ agony-3.elf \
+BluePill_Agony_3.elf \
 
 MAP_FILES += \
-BluePill\ agony-3.map \
+BluePill_Agony_3.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-BluePill\ agony-3.list \
+BluePill_Agony_3.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: BluePill\ agony-3.elf secondary-outputs
+main-build: BluePill_Agony_3.elf secondary-outputs
 
 # Tool invocations
-BluePill\ agony-3.elf BluePill\ agony-3.map: $(OBJS) $(USER_OBJS) D:\YandexDisk\Projects\STM32\BluePill\ agony-3\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "BluePill agony-3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\YandexDisk\Projects\STM32\BluePill agony-3\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfloat-abi=soft -mthumb
+BluePill_Agony_3.elf BluePill_Agony_3.map: $(OBJS) $(USER_OBJS) D:\YandexDisk\Projects\STM32\BluePill_Agony_3\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "BluePill_Agony_3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\YandexDisk\Projects\STM32\BluePill_Agony_3\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfloat-abi=soft -mthumb
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -85,14 +85,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-BluePill\ agony-3.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "BluePill agony-3.list"
+BluePill_Agony_3.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "BluePill_Agony_3.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) BluePill\ agony-3.elf BluePill\ agony-3.list BluePill\ agony-3.map BluePill\\ agony-3.elf default.size.stdout
+	-$(RM) BluePill_Agony_3.elf BluePill_Agony_3.list BluePill_Agony_3.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

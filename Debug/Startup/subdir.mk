@@ -16,7 +16,7 @@ OBJS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 Startup/%.o: ../Startup/%.s Startup/subdir.mk
-	arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -I"D:/YandexDisk/Projects/STM32/BluePill agony-3/Inc/CMSIS/DEVICE/STM32F1xx/Include" -I"D:/YandexDisk/Projects/STM32/BluePill agony-3/Inc/CMSIS/CORE" -I"D:/YandexDisk/Projects/STM32/BluePill agony-3/MY FUNCTIONS" -x assembler-with-cpp -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -I"D:/YandexDisk/Projects/STM32/BluePill_Agony_3/MY FUNCTIONS" -I"D:/YandexDisk/Projects/STM32/BluePill_Agony_3/INC/CMSIS/CORE" -I"D:/YandexDisk/Projects/STM32/BluePill_Agony_3/INC/CMSIS/DEVICE/STM32F1xx/Include" -x assembler-with-cpp -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@" "$<"
 
 clean: clean-Startup
 
