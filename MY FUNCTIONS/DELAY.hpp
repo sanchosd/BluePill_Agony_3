@@ -16,30 +16,27 @@ class Delay
 {
 	public:
 	/*CONSTRUCTOR DECLARATION START*/
-	Delay(std::list<int> delays_list);	// constructor accepts array of user-defined delays, in milliseconds.
+	Delay(const std::list<int>& delays_list);	// constructor accepts array of user-defined delays, in milliseconds.
 	/*CONSTRUCTOR DECLARATION FINSH*/
 
 	/*VARIABLES DECLARATION START*/
 
 	/*VARIABLES DECLARATION FINISH*/
 	/* METHODS DECLARATION START*/
-	void delay_trigger_rise();
-	void delay_trigger_reset();
-	void delay_get_state();
+//	void delay_triggers_rise();			// rise triggers for all delays
+//	void delay_trigger_reset();			// resets trigger for particular delay
+	void delay_update();				// updates all the delays counters in the map
+	bool delay_is_over(int delay);	// returns delay state, TRUE if delay is over.
 	/* METHODS DECLARATION FINISH*/
 	private:
 	/*VARIABLES DECLARATION START*/
 	// KEEPS TRIGGER STATE
-	enum trigger_state_t
-	{
-		HI,
-		LO
-	};
 	// KEEPS PARTICULAR DELAY PARAMETERS
 	struct delay_details_t{
-		trigger_state_t trigger_state = LO;
-		int delay_cntr_ms 	 		  = 0;
-		int delay_desired_ms 		  = 0;
+		bool delay_trigger 		= 0;
+		bool delay_over			= 0;
+		int delay_counter_ms 	= 0;
+		int delay_target_ms	    = 0;
 	};
 
 	std::map<int, delay_details_t> delays_map;

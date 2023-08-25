@@ -18,7 +18,8 @@ volatile uint32_t 	global_SysTick_Cnt;							//
 volatile uint32_t 	global_ADC_restart_timer = 0;				//
 volatile ADC_dump_struct ADC_DATA_DUMP;							// variable creation
 // GLOBAL VARIABLES DECLARATION FINISHED
-Buttons buttons_instance(my_buttons);							// CREATING CLASS "Buttons" instance
+Buttons buttons_instance(my_buttons);								// CLASS "Buttons" instance
+Delay	my_delays_set({100,500,1000});								// CLASS "DELAY" instance
 //Trigger trigger_0001ms(1);										// CREATING CLASS "TRIGGER" instance, with argument "1ms"
 //Trigger trigger_0010ms(10);										// CREATING CLASS "TRIGGER" instance, with argument "10ms"
 //Trigger trigger_0100ms(100);										// CREATING CLASS "TRIGGER" instance, with argument "100ms"
@@ -32,6 +33,7 @@ extern "C" void SysTick_Handler(void)
 	if(global_SysTick_Cnt>0){
 		global_SysTick_Cnt--;
 	}
+	my_delays_set.delay_update();	// updates class managing time delays
 //	trigger_0001ms.trigger_update();	// ping trigger
 //	trigger_0010ms.trigger_update();	// ping trigger
 //	trigger_0100ms.trigger_update();	// ping trigger
@@ -106,36 +108,14 @@ int main(void)
 		//		UART_transmit_string(message);
 		//		PROCESS_DATA(ADC_DATA_DUMP.ADC_DMA_buffer_array);
 		//		PREPARE_MESSAGE();	// SENDS ALL THE PREPARED DATA THROUGH UART
-//		if(trigger_0001ms.trigger_get_state() == true)
-//		{
-//			trigger_0001ms.trigger_reset();
-//			//		GPIOC->ODR &= ~GPIO_ODR_ODR13;	  // SET LED GPIO LOW (LIGHT ON)
-//			//		GPIOC->ODR |= GPIO_ODR_ODR13;	  // SET LED GPIO HIGH (LIGHT OFF)
-//			//		GPIOC->ODR ^= GPIO_ODR_ODR13;	  // INVERT LED GPIO
-//		}
-//
-//		if(trigger_0100ms.trigger_get_state() == true)
-//		{
-//			trigger_0100ms.trigger_reset();
-//		}
-//
-//		if(trigger_0500ms.trigger_get_state() == true)
-//		{
-//			trigger_0500ms.trigger_reset();
-//			//		GPIOC->ODR &= ~GPIO_ODR_ODR13;	  // SET LED GPIO LOW (LIGHT ON)
-//			//		GPIOC->ODR |= GPIO_ODR_ODR13;	  // SET LED GPIO HIGH (LIGHT OFF)
-//			//		GPIOC->ODR ^= GPIO_ODR_ODR13;	  // INVERT LED GPIO
-//		}
-//
-//		if(trigger_1000ms.trigger_get_state() == true)
-//		{
-//				{
-//					trigger_1000ms.trigger_reset();
-//					//		GPIOC->ODR &= ~GPIO_ODR_ODR13;	  // SET LED GPIO LOW (LIGHT ON)
-//					//		GPIOC->ODR |= GPIO_ODR_ODR13;	  // SET LED GPIO HIGH (LIGHT OFF)
-//							GPIOC->ODR ^= GPIO_ODR_ODR13;	  // INVERT LED GPIO
-//				}
-//
-//		}
+
+		if(my_delays_set.delay_is_over(100) == true)
+			{
+
+			}
+		if(my_delays_set.delay_is_over(1000) == true)
+			{
+				GPIOC->ODR ^= GPIO_ODR_ODR13;	  // INVERT LED GPIO
+			}
 	}// WHILE ENDS HERE
 }// MAIN ENDS HERE
