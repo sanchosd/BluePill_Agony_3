@@ -113,7 +113,7 @@ int main(void)
 			{
 
 			}
-		if(my_delays_set.delay_is_over(1000) == true)
+		if(my_delays_set.delay_is_over(10000) == true)
 			{
 				GPIOC->ODR ^= GPIO_ODR_ODR13;	  // INVERT LED GPIO
 			}
